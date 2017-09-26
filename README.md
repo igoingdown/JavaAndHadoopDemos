@@ -1,12 +1,11 @@
 ## package2 
 
 This is a package is generated when I learn hadoop. It's some demos
-using hadoop to deal with some simple problem.
+using hadoop to deal with some simple problems.
 
 ## package_2
 
-This is a package generated when I learn java, Changing from python 
-to java is really harsh!
+This is a package generated when I learn java.
 
 ## VirtuosoSPARQLExample1 
 
