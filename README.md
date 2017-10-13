@@ -10,7 +10,7 @@ This is a package generated when I learn java.
 ## VirtuosoSPARQLExample1 
 
 This is a class I wrote to get data from virtuoso database which 
- stored the freebase data. 
+ stored the freebase original data. 
  
  This class relies on some jars listed in 
  [this page](http://docs.openlinksw.com/virtuoso/rdfnativestorageprovidersjena/).
