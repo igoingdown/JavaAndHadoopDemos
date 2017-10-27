@@ -1,8 +1,13 @@
-import com.hp.hpl.jena.query.*;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import virtuoso.jena.driver.*;
+package virtuoso_test;
 
-public class VirtuosoSPARQLExample1 {
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.RDFNode;
+import virtuoso.jena.driver.VirtGraph;
+import virtuoso.jena.driver.VirtuosoQueryExecution;
+import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
+
+public class VirtuosoExample {
     public static void main(String[] args) {
         String url;
         if(args.length == 0)
@@ -23,3 +28,6 @@ public class VirtuosoSPARQLExample1 {
         }
     }
 }
+
+
+

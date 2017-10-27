@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
 public class NioTest {
     public static void main(String[] args) {
         try{
-            RandomAccessFile randomAccessFile = new RandomAccessFile("/Users/zhaomingxing/IdeaProjects/hello_world/src/package_1/nio_test_file.txt", "rw");
+            RandomAccessFile randomAccessFile = new RandomAccessFile("/Users/zhaomingxing/IdeaProjects/hello_world/src/java_basic_tools/nio_test_file.txt", "rw");
             FileChannel fileChannel = randomAccessFile.getChannel();
             ByteBuffer buffer = ByteBuffer.allocate(512);
             try {
