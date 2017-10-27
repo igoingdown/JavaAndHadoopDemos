@@ -7,8 +7,8 @@
  
 * SortData
   * sort lines in the file.
-  * 这是一道百度的面试题，我不幸因为这个问题被刷了！
-    当时不懂hadoop，现在知道hadoop的重要性了！
+  * 这是一道百度实习的面试题，因为这个问题我被刷了！
+    hadoop还是相当重要的！
 
 
 ---

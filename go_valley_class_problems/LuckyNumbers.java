@@ -16,7 +16,8 @@ public class LuckyNumbers {
         return res;
     }
 
-    private static void recursion(String num, int target, int start, int cur, int last, List<String> res, String solution) {
+    private static void recursion(String num, int target, int start, int cur, int last,
+                                  List<String> res, String solution) {
         if (start == num.length()) {
             if (target == cur) res.add(solution);
             return;
