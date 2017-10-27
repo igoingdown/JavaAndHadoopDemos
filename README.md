@@ -1,18 +1,19 @@
-## package2 
+## hadoop_demos
 
 This is a package is generated when I learn hadoop. It's some demos
 using hadoop to deal with some simple problems.
 
-## package_2
+## java_basic_tools
 
 This is a package generated when I learn java.
+Write these code to get familiar with java basic tools.
 
-## VirtuosoSPARQLExample1 
+## virtuoso_test
 
-This is a class I wrote to get data from virtuoso database which 
+This is a package I wrote to get data from virtuoso database which 
  stored the freebase original data. 
  
- This class relies on some jars listed in 
+ This package depends on some jars listed in 
  [this page](http://docs.openlinksw.com/virtuoso/rdfnativestorageprovidersjena/).
  Download the jars mentioned above and add it to the project is 
  OK.
