@@ -1,57 +1,59 @@
 package go_valley_class_problems;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MazeII {
-    public static final int[] bias = {1, 0, -1, 0, 1};
-    public static final char[] directions = {'D', 'L', 'U', 'R'};
+    private static final int[] bias = {1, 0, -1, 0, 1};
     public static void main(String[] args) {
-        char[][] board1 = {
-                {'.', 'X', '.', '.', '.', 'X'},
-                {'.', '.', '.', 'X', '.', 'X'},
-                {'X', 'X', '.', 'X', '.', '.'},
-                {'.', 'X', 'X', 'X', '.', 'X'},
-                {'.', '.', '.', '.', '.', 'X'},
-                {'.', '.', '.', '.', '.', '.'}};
-        solveMazeWithMultiPath(board1, 0, 0, 5, 5, "");
-        System.out.println("\n\n");
-        solveMazeWithOnePath(board1, 0, 0, 5, 5, "");
+        int[][] maze = {
+                {0, 1, 0},
+                {0, 0, 1},
+                {0, 1, 0}};
+        int[][] maze1 = {
+                {0, 1, 0, 0, 0, 1},
+                {0, 0, 0, 1, 0, 1},
+                {1, 1, 0, 1, 0, 0},
+                {0, 1, 1, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1},
+                {0, 0, 0, 0, 0, 0}};
+        int[] start = {0, 0}, end = {2, 2,}, end1 = {5, 5};
+        System.out.println(shortestDistance(maze, start, end));
+        System.out.println(shortestDistance(maze1, start, end1));
+
     }
 
-    public static void solveMazeWithMultiPath(char[][] board, int startX, int startY, int endX, int endY, String path) {
-        if (startX >= board.length || startX < 0 || startY >= board[0].length || startY < 0 ||
-                board[startX][startY] == 'X') {
-            return;
+    private static int shortestDistance(int[][] maze, int[] start, int[] end) {
+        int[] bias = {1, 0, -1, 0, 1};
+        int[][] distance = new int[maze.length][maze[0].length];
+        for (int i = 0; i < distance.length; i++) {
+            for (int j = 0; j < distance[0].length; j++) {
+                distance[i][j] = Integer.MAX_VALUE;
+            }
         }
-        if (startX == endX && startY == endY) {
-            System.out.println(path);
-            return;
+        Queue<Pair> pairQueue = new LinkedList<>();
+        pairQueue.offer(new Pair(start[0], start[1]));
+        distance[start[0]][start[1]] = 0;
+        while (!pairQueue.isEmpty()) {
+            Pair current = pairQueue.poll();
+            for (int i = 0; i < 4; i++) {
+                int x = current.x, y = current.y, dist = distance[x][y];
+                while (x >= 0 && x < maze.length && y >= 0 && y < maze[0].length && maze[x][y] == 0) {
+                    x += bias[i];
+                    y += bias[i + 1];
+                    dist++;
+                }
+                x -= bias[i];
+                y -= bias[i + 1];
+                dist--;
+                if (distance[x][y] > dist) {
+                    distance[x][y] = dist;
+                    if (x != end[0] || y != end[1]) {
+                        pairQueue.offer(new Pair(x, y));
+                    }
+                }
+            }
         }
-        board[startX][startY] = 'X';
-        for (int i = 0; i < 4; i++) {
-            String newPath = path + directions[i];
-            int newX = startX + bias[i], newY = startY + bias[i + 1];
-            solveMazeWithMultiPath(board, newX, newY, endX, endY, newPath);
-
-        }
-        board[startX][startY] = '.';
+        return distance[end[0]][end[1]] == Integer.MAX_VALUE ? -1 : distance[end[0]][end[1]];
     }
-
-    public static boolean solveMazeWithOnePath(char[][] board, int startX, int startY, int endX, int endY, String path) {
-        if (startX >= board.length || startX < 0 || startY >= board[0].length || startY < 0 ||
-                board[startX][startY] == 'X') {
-            return false;
-        }
-        if (startX == endX && startY == endY) {
-            System.out.println(path);
-            return true;
-        }
-        board[startX][startY] = 'X';
-        for (int i = 0; i < 4; i++) {
-            String newPath = path + directions[i];
-            int newX = startX + bias[i], newY = startY + bias[i + 1];
-            if(solveMazeWithOnePath(board, newX, newY, endX, endY, newPath)) return true;
-
-        }
-        return false;
-    }
-
 }
