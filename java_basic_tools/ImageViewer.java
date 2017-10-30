@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package package_1;
+package java_basic_tools;
 
 import java.awt.event.*;
 import java.io.*;

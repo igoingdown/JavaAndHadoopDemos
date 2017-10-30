@@ -1,4 +1,4 @@
-package package_1;
+package java_basic_tools;
 
 /**
  * Created by zhaomingxing on 2017/1/10.
