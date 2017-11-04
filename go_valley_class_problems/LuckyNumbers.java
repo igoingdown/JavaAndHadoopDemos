@@ -11,7 +11,6 @@ public class LuckyNumbers {
 
     private static List<String> luckyNumbers(String num, int target) {
         List<String> res = new ArrayList<>();
-        String solution = "";
         recursion(num, target, 0, 0, 0, res, "");
         return res;
     }
