@@ -1,10 +1,10 @@
 package go_valley_class_problems;
 
-public class TreeNode {
-    private char val;
+public class TreeNode<T> {
+    private T val;
     private TreeNode left;
     private TreeNode right;
-    public TreeNode(char x) {
+    public TreeNode(T x) {
         val = x;
         left = null;
         right = null;
@@ -18,7 +18,7 @@ public class TreeNode {
         return right;
     }
 
-    public char getVal() {
+    public T getVal() {
         return val;
     }
 
@@ -30,7 +30,7 @@ public class TreeNode {
         this.right = right;
     }
 
-    public void setVal(char val) {
+    public void setVal(T val) {
         this.val = val;
     }
 

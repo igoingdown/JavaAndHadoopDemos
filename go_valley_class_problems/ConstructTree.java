@@ -4,14 +4,14 @@ package go_valley_class_problems;
 public class ConstructTree {
     public static void main(String[] args) {
         String preOrder = "ABDEHICFGJ", inOrder = "DBHEIAFCGJ", postOrder = "DHIEBFJGCA";
-        TreeNode root = constructTreeFromPreAndInOrder(preOrder, inOrder);
+        TreeNode<Character> root = constructTreeFromPreAndInOrder(preOrder, inOrder);
         System.out.println("pre + in order res:");
         preTraverse(root);
         System.out.println("\n" + preOrder);
         inTraverse(root);
         System.out.println("\n" + inOrder);
         System.out.println("post + in order res:");
-        TreeNode tmp = constructTreeFromPostAndInOrder(postOrder, inOrder);
+        TreeNode<Character> tmp = constructTreeFromPostAndInOrder(postOrder, inOrder);
         postTraverse(tmp);
         System.out.println("\n" + postOrder);
         inTraverse(tmp);
@@ -19,21 +19,21 @@ public class ConstructTree {
 
     }
 
-    private static void preTraverse(TreeNode root) {
+    private static void preTraverse(TreeNode<Character> root) {
         if (root == null) return;
         System.out.print(root.getVal());
         preTraverse(root.getLeft());
         preTraverse(root.getRight());
     }
 
-    private static void inTraverse(TreeNode root) {
+    private static void inTraverse(TreeNode<Character> root) {
         if (root == null) return;
         inTraverse(root.getLeft());
         System.out.print(root.getVal());
         inTraverse(root.getRight());
     }
 
-    private static void postTraverse(TreeNode root) {
+    private static void postTraverse(TreeNode<Character> root) {
         if (root == null) return;
         postTraverse(root.getLeft());
         postTraverse(root.getRight());
@@ -41,22 +41,22 @@ public class ConstructTree {
     }
 
 
-    private static TreeNode constructTreeFromPreAndInOrder(String preOrder, String inOrder) {
+    private static TreeNode<Character> constructTreeFromPreAndInOrder(String preOrder, String inOrder) {
         if (preOrder.length() == 0) return null;
         return constructPreAndIn(preOrder, 0, preOrder.length(),
                 inOrder, 0, inOrder.length());
     }
 
-    private static TreeNode constructTreeFromPostAndInOrder(String postOrder, String inOrder) {
+    private static TreeNode<Character> constructTreeFromPostAndInOrder(String postOrder, String inOrder) {
         if (postOrder.length() == 0) return null;
         return constructPostAndIn(postOrder, 0, postOrder.length(),
                 inOrder, 0, inOrder.length());
     }
 
-    private static TreeNode constructPostAndIn(String postOrder, int postStart, int postEnd,
+    private static TreeNode<Character> constructPostAndIn(String postOrder, int postStart, int postEnd,
                                                String inOrder, int inStart, int inEnd) {
         if (postStart == postEnd) return null;
-        TreeNode root = new TreeNode(postOrder.charAt(postEnd - 1));
+        TreeNode<Character> root = new TreeNode<Character>(postOrder.charAt(postEnd - 1));
         int i = inStart;
         for (; i < inEnd; i++) {
             if (inOrder.charAt(i) == postOrder.charAt(postEnd - 1)) break;
@@ -69,10 +69,10 @@ public class ConstructTree {
         return root;
     }
 
-    private static TreeNode constructPreAndIn(String preOrder, int preStart, int preEnd,
+    private static TreeNode<Character> constructPreAndIn(String preOrder, int preStart, int preEnd,
                                       String inOrder, int inStart, int inEnd) {
         if (preStart == preEnd) return null;
-        TreeNode root = new TreeNode(preOrder.charAt(preStart));
+        TreeNode<Character> root = new TreeNode<Character>(preOrder.charAt(preStart));
         int i = inStart;
         for (; i < inEnd; i++) {
             if (inOrder.charAt(i) == preOrder.charAt(preStart)) break;
