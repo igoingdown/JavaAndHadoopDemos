@@ -4,7 +4,11 @@ public class BinarySearchTree {
     private static TreeNode<Integer> root;
     public static void main(String[] args) {
         constructBST();
-
+        if (findElem(22)) System.out.println("find 22");
+        if (addEle(15)) System.out.println("add 15 success");
+        inOrder(root);
+        if (delete(18)) System.out.println("delete 18 success");
+        inOrder(root);
         System.out.println("");
     }
 
@@ -25,8 +29,8 @@ public class BinarySearchTree {
     public static boolean findElem(int x) {
         TreeNode<Integer> t = root;
         while (t != null) {
-            if (t.getVal() < x) t = t.getLeft();
-            else if (t.getVal() > x) t = t.getRight();
+            if (t.getVal() > x) t = t.getLeft();
+            else if (t.getVal() < x) t = t.getRight();
             else return true;
         }
         return false;
@@ -39,14 +43,14 @@ public class BinarySearchTree {
         }
         TreeNode<Integer> t = root;
         while (t != null) {
-            if (t.getVal() < x) {
+            if (t.getVal() > x) {
                 if (t.getLeft() == null) {
                     t.setLeft(new TreeNode<>(x));
                     return true;
                 } else {
                     t = t.getLeft();
                 }
-            } else if (t.getVal() > x) {
+            } else if (t.getVal() < x) {
                 if (t.getRight() == null) {
                     t.setRight(new TreeNode<>(x));
                     return true;
@@ -62,15 +66,69 @@ public class BinarySearchTree {
 
 
     private static boolean delete(int x) {
+        if (root == null) return false;
+        if (root.getVal() == x) {
+            root = null;
+            return true;
+        }
+        TreeNode<Integer> t = root;
+        while (t != null) {
+            if (t.getVal() > x) {
+                if (t.getLeft() != null && (int)t.getLeft().getVal() != x) {
+                    t = t.getLeft();
+                } else if (t.getLeft() == null) {
+                    return false;
+                } else {
+                    deleteNode(t.getLeft());
+                    return true;
+                }
 
-
-        return true;
+            } else if (t.getVal() < x) {
+                if (t.getRight() != null && (int)t.getRight().getVal() != x) {
+                    t = t.getRight();
+                } else if (t.getRight() == null) {
+                    return false;
+                } else {
+                    deleteNode(t.getRight());
+                }
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
-    private static void inOrder(TreeNode<Integer> root) {
-        if (root == null) return;
-        inOrder(root.getLeft());
-        System.out.println(root.getVal());
-        inOrder(root.getRight());
+
+    public static TreeNode<Integer> deleteNode(TreeNode<Integer> node) {
+        if (node.getLeft() == null && node.getRight() == null) return null;
+        else if (node.getLeft() == null) return node.getRight();
+        else if (node.getRight() == null) return node.getLeft();
+        else {
+            node.setVal(findAndDelete(node));
+            return node;
+        }
+    }
+
+    private static int findAndDelete(TreeNode<Integer> node) {
+        if (node.getLeft().getRight() == null) {
+            int res = (int)node.getLeft().getVal();
+            node.setLeft(node.getLeft().getLeft());
+            return res;
+        } else {
+            node = node.getLeft();
+            while(node.getRight().getRight() != null) {
+                node = node.getRight();
+            }
+            int res = (int)node.getRight().getVal();
+            node.setRight(node.getRight().getLeft());
+            return res;
+        }
+    }
+
+    private static void inOrder(TreeNode<Integer> t) {
+        if (t == null) return;
+        inOrder(t.getLeft());
+        System.out.println(t.getVal());
+        inOrder(t.getRight());
     }
 }
