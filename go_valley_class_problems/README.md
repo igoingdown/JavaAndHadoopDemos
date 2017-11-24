@@ -52,3 +52,22 @@ Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"]. But it
 * DFS和heap结合
 * path先添加无路可走的节点，使用链表的头插法
 
+
+#### leetcode 291. WordPatternII
+```
+This is the extension problem of Word Pattern I.
+
+Given a pattern and a string str, find if str follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty substring in str.
+
+Examples:
+pattern = "abab", str = "redblueredblue" should return true.
+pattern = "aaaa", str = "asdasdasdasd" should return true.
+pattern = "aabb", str = "xyzabcxzyabc" should return false.
+
+```
+##### 注意
+
+* 双map和dfs结合，
+* strStart应该更新为i + 1而不是i。
