@@ -10,5 +10,7 @@ public class StringTest {
         String b = "hh";
         System.out.println(a == b);
         System.out.println(s.substring(1));
+        System.out.println(s.length());
+        System.out.println(s.substring(1, 11));
     }
 }
