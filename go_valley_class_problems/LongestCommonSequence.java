@@ -8,6 +8,7 @@ public class LongestCommonSequence {
 
     public static int lcs(String a, String b) {
         int[][] dp = new int[a.length() + 1][b.length() + 1];
+        // dp[i][j]表示a[0,i]和b[0,j]的最长公共序列的长度。
         for (int i = 1; i < a.length() + 1; i++) {
             for (int j = 1; j < b.length() + 1; j++) {
                 if (a.charAt(i - 1) == b.charAt(j - 1)) {

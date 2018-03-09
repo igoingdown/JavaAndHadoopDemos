@@ -10,6 +10,7 @@ public class KthLargestElement {
     }
 
     static int findElement(int[] nums, int k) {
+        // 堆
         PriorityQueue<Integer> q = new PriorityQueue<>(k, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {

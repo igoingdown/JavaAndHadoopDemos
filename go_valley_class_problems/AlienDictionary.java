@@ -2,6 +2,7 @@ package go_valley_class_problems;
 
 import java.util.*;
 
+// 拓扑排序
 public class AlienDictionary {
     public static void main (String[] args) {
         String[] words = {"wrt", "wrf", "er", "ett", "rftt"};
@@ -18,6 +19,9 @@ public class AlienDictionary {
         for (Character c : chars) {
             graph.putIfAbsent(c, new HashSet<>());
         }
+        // TODO: 找到前后两个word的第一个相异的char，那个word在前，相异的char的优先级越高
+        // TODO: 据此可以构建出所有的优先级对，形成graph，然后拓扑排序求解
+        // TODO: 拓扑排序中，hashmap的value存的是比key之前的key的set，value为空，表示当前key优先级最高是顶点。
         for (int i = 0; i < words.length; i++) {
             for (int j = i + 1; j < words.length; j++) {
                 int k = 0, maxIndex = Math.min(words[i].length(), words[j].length());
