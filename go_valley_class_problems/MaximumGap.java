@@ -18,6 +18,9 @@ public class MaximumGap {
         }
         // if (maxElem == minElem) return res;
         int bucketSize = (maxElem - minElem) / l + 1;
+        // l 就是桶的个数，n个数字n个桶，极限状态下每个桶只有一个数字，
+        //     非极限状态的话，至少有一个桶为空（鸽巢原理）。
+        //     因此有结论：最大的Gap一定出现在桶之间。
         List<List<Integer>> buckets = new ArrayList<>();
         for (int i = 0; i <= l; i++) {
             buckets.add(new ArrayList<>());
@@ -34,7 +37,7 @@ public class MaximumGap {
         }
         int pre = 0;
         for (int i = 1; i < l + 1; i++) {
-            if (buckets.get(i).size() == 0) continue;;
+            if (buckets.get(i).size() == 0) continue;
             res = Math.max(res, buckets.get(i).get(0) - buckets.get(pre).get(1));
             pre = i;
         }
