@@ -46,4 +46,12 @@
 		还可以使用双向链表来做，但是空间回收还是比较麻烦
 	2. 带有min的栈
 		* 使用递减栈
-	3. 
+	3. 栈集合的push、pop以及popAt操作实现
+		* 使用list和stack两种数据结构
+	4. 汉诺塔
+		* 递归。将n-1个上层元素移到buffer，将最底层的元素移到destination，再将buffer视为源，移到destination。
+	5. 双栈实现队列
+		* 双栈呈"U"型结构
+	6. 对栈进行升序排序，只能使用另一个栈作为buffer辅助排序。
+		* 将buffer排为降序，每次将stack的栈顶插到buffer的适当位置
+	
