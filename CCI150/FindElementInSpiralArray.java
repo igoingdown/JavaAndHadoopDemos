@@ -15,11 +15,11 @@ public class FindElementInSpiralArray {
         while (low < high) {
             mid = low + ((high - low) >> 1);
             if (arr[mid] == target) return mid;
-            if (arr[low] < arr[mid]) {
-                if (arr[low] <= target && arr[mid] > target) high = mid - 1;
+            if (arr[low] < arr[mid]) {  // 左半侧为正常排序
+                if (arr[low] <= target && arr[mid] > target) high = mid - 1;  // target落在正常排序的那部分
                 else low = mid + 1;
-            } else if (arr[mid] < arr[low]){
-                if (arr[mid] < target && arr[high] >= target) low = mid + 1;
+            } else if (arr[mid] < arr[low]){ // 右半侧为正常排序
+                if (arr[mid] < target && arr[high] >= target) low = mid + 1; // target落在正常排序的那部分
                 else high = mid - 1;
             } else low++;
         }
