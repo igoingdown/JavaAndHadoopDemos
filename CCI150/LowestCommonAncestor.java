@@ -1,6 +1,6 @@
 package CCI150;
 
-public class FirstCommonAncestor {
+public class LowestCommonAncestor {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2);
@@ -8,7 +8,7 @@ public class FirstCommonAncestor {
         root.left.right = new TreeNode(3);
         root.right = new TreeNode(6);
         root.right.right = new TreeNode(10);
-        TreeNode node = lowerestCommonAncestorHelper(root.left.right, root.left.right, root).node;
+        TreeNode node = lowestCommonAncestorHelper(root.left.right, root.left.right, root).node;
         if (node != null) System.out.println(node.val);
         else System.out.println("null");
     }
@@ -48,12 +48,12 @@ public class FirstCommonAncestor {
         }
     }
 
-    public static Result lowerestCommonAncestorHelper(TreeNode node1, TreeNode node2, TreeNode root) {
-        if (root == null) return new  Result(null, false);
+    public static Result lowestCommonAncestorHelper(TreeNode node1, TreeNode node2, TreeNode root) {
+        if (root == null) return new Result(null, false);
         if (root == node1 && root == node2) return new Result(root, true);
-        Result rx = lowerestCommonAncestorHelper(node1, node2, root.left);
+        Result rx = lowestCommonAncestorHelper(node1, node2, root.left);
         if (rx.isRes) return rx;
-        Result ry = lowerestCommonAncestorHelper(node1, node2, root.right);
+        Result ry = lowestCommonAncestorHelper(node1, node2, root.right);
         if (ry.isRes) return ry;
         if (rx.node != null && ry.node != null) return new Result(root, true);
         else if (root == node1 || root == node2) return new Result(root, rx.node != null || ry.node != null);
