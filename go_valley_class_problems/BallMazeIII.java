@@ -5,6 +5,9 @@ import java.util.Queue;
 
 public class BallMazeIII {
     // leetcode 499
+    // 与BallMaze的区别是不仅需要用全局的distance二维数组记录起点到每个点的距离，
+    //     还要用全局的path二维数组记录起点到每个点的最短distance对应的path(字符顺序最小)，
+    //     用BFS不断更新distance和path
     private static final int[] dx = {1, 0, 0, -1};
     private static final int[] dy = {0, -1, 1, 0};
     private static final String[] directions =new String[] {"d", "l", "r", "u"};

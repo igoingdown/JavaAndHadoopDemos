@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class BallMazeII {
     // 原题参看 https://leetcode.com/articles/the-maze-ii/
+    // 与BallMaze的区别是需要用全局的distance二维数组记录起点到每个点的距离，然后用BFS不断更新distance
     private static final int[] bias = {1, 0, -1, 0, 1};
     public static void main(String[] args) {
         int[][] maze = {
