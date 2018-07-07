@@ -7,26 +7,26 @@ public class WordLadderII {
         String beginWord = "hit";
         String endWord = "cog";
         String[] wordList = {"hot","dot","dog","lot","log","cog"};
-        for (String[] path : wordLadders(wordList, beginWord, endWord)) {
-            for (String word : path) System.out.println(word + " ");
+        for (List<String> path : wordLadders(wordList, beginWord, endWord)) {
+            for (String word : path) System.out.print(word + " ");
             System.out.println();
         }
     }
 
-    private static String[][] wordLadders(String[] words, String beginWord, String endWord) {
+    private static List<List<String>> wordLadders(String[] wordList, String beginWord, String endWord) {
         Queue<LinkedList<String>> q = new LinkedList<>(), next = new LinkedList<>();
         HashMap<String, Boolean> visited = new HashMap<>();
-        for (String word : words) visited.put(word, false);
+        for (String word : wordList) visited.put(word, false);
         LinkedList<String> initialPath = new LinkedList<>();
         initialPath.add(beginWord);
         q.offer(initialPath);
-        List<String[]> res = new LinkedList<>();
+        List<List<String>> res = new LinkedList<>();
 
         while (!q.isEmpty()) {
             HashSet<String> layerVisited = new HashSet<>();
             while (!q.isEmpty()) {
                 LinkedList<String> cur = q.poll();
-                if (cur.getLast().equals(endWord)) res.add(cur.toArray(new String[0]));
+                if (cur.getLast().equals(endWord)) res.add(cur);
                 StringBuilder curBuilder = new StringBuilder(cur.getLast());
                 for (int i = 0; i < curBuilder.length(); i++) {
                     char tmp = curBuilder.charAt(i);
@@ -51,7 +51,7 @@ public class WordLadderII {
             next = tmp;
             if (res.size() > 0) break;
         }
-        return res.toArray(new String[0][]);
+        return res;
     }
 
 }
