@@ -3,7 +3,7 @@ package go_valley_class_problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MazeII {
+public class BallMazeII {
     private static final int[] bias = {1, 0, -1, 0, 1};
     public static void main(String[] args) {
         int[][] maze = {

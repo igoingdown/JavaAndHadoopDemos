@@ -3,7 +3,7 @@ package go_valley_class_problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MazeIII {
+public class BallMazeIII {
     private static final int[] dx = {1, 0, 0, -1};
     private static final int[] dy = {0, -1, 1, 0};
     private static final String[] directions =new String[] {"d", "l", "r", "u"};

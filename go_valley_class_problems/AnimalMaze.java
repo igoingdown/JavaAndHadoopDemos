@@ -1,6 +1,6 @@
 package go_valley_class_problems;
 
-public class Maze {
+public class AnimalMaze {
     private static final int[] bias = {1, 0, -1, 0, 1};
     public static void main(String[] args) {
         char[][] board = {
@@ -56,8 +56,8 @@ public class Maze {
         // 本题不需要回溯，这是因为本题需要返回的结果是bool值，就是说能不能走通，
         //     如果DFS过程中，经过一个节点的第一个path走过这个节点时，通过遍历其后续所有可能的path得知这个节点无法走通
         //     则其他分支即使有可能经过节点也不必再次遍历，因为其后面的所有可能都被遍历过了！
-        // 而回溯法(所有子问题遍历结束后使用"board[startX][startY] = '.' "将board状态还原到遍历子问题之前)的递归深度是定值，
-        //     子问题规模是定值，所以一定不会出现无限递归！
+        // 回溯法(所有子问题遍历结束后使用"board[startX][startY] = '.' "将board状态还原到遍历子问题之前)的递归深度是定值，
+        //     子问题规模是定值，所以一定不会出现无限递归，但是本题如果回溯会导致TLE！
         // 这是能否到达终点问题和遍历到达终点所有可能路径问题的区别。
         for (int i = 0; i < 4; i++) {
             int newX = startX + bias[i], newY = startY + bias[i + 1];
