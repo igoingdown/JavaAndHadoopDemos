@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BallMaze {
+    // 原题参考 https://leetcode.com/articles/the-maze/
     private static final int[] bias = {1, 0, -1, 0, 1};
     public static void main(String[] args) {
         int[][] board = {{0,0,1,0,0},
