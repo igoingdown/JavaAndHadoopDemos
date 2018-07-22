@@ -1,8 +1,8 @@
-package CCI150;
+package acm.bupt.spring2018;
 
 import java.util.Scanner;
 
-public class BUPT_ACM_PRE_C {
+public class PreC {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = 0;
@@ -14,7 +14,7 @@ public class BUPT_ACM_PRE_C {
         }
     }
 
-    public static int count(String s) {
+    private static int count(String s) {
         int[] dp = {0, 0, 0, 0};
         //          b  u  p  t
         if (s.length() == 0) return 0;

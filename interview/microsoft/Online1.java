@@ -1,15 +1,15 @@
-package CCI150;
+package interview.microsoft;
 
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class MS1 {
+public class Online1 {
     public static void main(String[] args) {
         System.out.println(foo(310));
         System.out.println(foo(918));
     }
 
-    public static long foo(long key) {
+    private static long foo(long key) {
         LinkedList<Long> s = new LinkedList<>();
         while (key != 0) {
             s.addLast(key % 10); key /= 10;
@@ -30,3 +30,4 @@ public class MS1 {
         return res;
     }
 }
+

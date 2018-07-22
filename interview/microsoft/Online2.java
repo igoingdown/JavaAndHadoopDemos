@@ -1,8 +1,8 @@
-package CCI150;
+package interview.microsoft;
 
 import java.util.LinkedList;
 
-public class MS2 {
+public class Online2 {
     public static void main(String[] args) {
         int[] a = {2, 6, 9, 8};
         LinkedList<Integer> heights = new LinkedList<>();
@@ -10,7 +10,7 @@ public class MS2 {
         System.out.println(days(heights));
     }
 
-    public static int days(LinkedList<Integer> heights) {
+    private static int days(LinkedList<Integer> heights) {
         LinkedList<Integer> left = new LinkedList<>(), toPop = new LinkedList<>();
         int days = 0;
         while (true) {

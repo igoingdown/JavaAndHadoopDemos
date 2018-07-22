@@ -1,11 +1,12 @@
-package CCI150;
+package acm.bupt.spring2018;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class BUPT_ACM_PRE_H {
+public class PreH {
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 //        while (in.hasNext()) {
@@ -26,12 +27,12 @@ public class BUPT_ACM_PRE_H {
 
     public static class Node{
         public int x, y;
-        public char dir;
-        public Node(int r, int c, char d){
+        private char dir;
+        private Node(int r, int c, char d){
             x = r; y = c; dir = d;
         }
     }
-    public static int foo(int n, int m, ArrayList<String> map) {
+    private static int foo(int n, int m, ArrayList<String> map) {
         Queue<Node> q = new LinkedList<>(), next = new LinkedList<>();
         boolean found = false;
         boolean[][] visited = new boolean[n][m];
@@ -69,3 +70,4 @@ public class BUPT_ACM_PRE_H {
         return -1;
     }
 }
+

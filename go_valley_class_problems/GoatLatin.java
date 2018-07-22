@@ -1,14 +1,14 @@
-package CCI150;
+package go_valley_class_problems;
 
 import java.util.Arrays;
 
-public class LeetCode_824 {
+public class GoatLatin {
     public static void main(String[] args) {
         String s = "I speak Goat Latin";
         System.out.println(toGoatLatin(s));
     }
 
-    public static String toGoatLatin(String S) {
+    private static String toGoatLatin(String S) {
         String[] words = S.split(" ");
         StringBuilder res = new StringBuilder(), tmp;
         for (int i = 0; i < words.length; i++) {
@@ -28,3 +28,4 @@ public class LeetCode_824 {
         return res.toString();
     }
 }
+
