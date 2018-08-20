@@ -1,6 +1,7 @@
 package interview.AkunaCapital.Job.Online;
 
 public class Problem1 {
+    // 类似leetcode 54。画出完整矩形之后就很容易看出规律
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         System.out.println(sumFunction(arr));
