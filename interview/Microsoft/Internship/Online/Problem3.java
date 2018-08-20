@@ -1,6 +1,6 @@
-package interview.microsoft;
+package interview.Microsoft.Internship.Online;
 
-public class Online3 {
+public class Problem3 {
     public static void main(String[] args) {
         int[] arr = {5, 7, 4, 8};
         System.out.println(f(arr));

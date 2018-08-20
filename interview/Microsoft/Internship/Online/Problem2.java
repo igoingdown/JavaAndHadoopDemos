@@ -1,8 +1,8 @@
-package interview.microsoft;
+package interview.Microsoft.Internship.Online;
 
 import java.util.LinkedList;
 
-public class Online2 {
+public class Problem2 {
     public static void main(String[] args) {
         int[] a = {2, 6, 9, 8};
         LinkedList<Integer> heights = new LinkedList<>();

@@ -1,9 +1,9 @@
-package interview.microsoft;
+package interview.Microsoft.Internship.Online;
 
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Online1 {
+public class Problem1 {
     public static void main(String[] args) {
         System.out.println(foo(310));
         System.out.println(foo(918));
@@ -30,4 +30,3 @@ public class Online1 {
         return res;
     }
 }
-

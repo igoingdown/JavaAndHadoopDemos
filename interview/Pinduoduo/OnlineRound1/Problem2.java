@@ -1,8 +1,8 @@
-package interview.pinduoduo;
+package interview.Pinduoduo.OnlineRound1;
 
 import java.util.Scanner;
 
-public class Online2 {
+public class Problem2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {

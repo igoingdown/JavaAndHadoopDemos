@@ -1,11 +1,11 @@
-package interview.pinduoduo;
+package interview.Pinduoduo.OnlineRound1;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Online3 {
+public class Problem3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {

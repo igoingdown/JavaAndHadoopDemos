@@ -1,4 +1,4 @@
-package interview.pinduoduo.Online2nd;
+package interview.Pinduoduo.OnlineRound2;
 
 import java.util.*;
 
