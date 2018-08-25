@@ -33,7 +33,7 @@ public class PalindromeList {
         ListNode slow = head, fast = head;
         Stack<ListNode> stack = new Stack<>();
         while (fast != null && fast.next != null) {
-            stack.push(head);
+            stack.push(slow);
             slow = slow.next; fast = fast.next.next;
         }
         if (stack.isEmpty()) return true;

@@ -1,4 +1,4 @@
-package Huawei.Interview.Online;
+package interview.Huawei.Job.Online;
 
 import java.util.*;
 

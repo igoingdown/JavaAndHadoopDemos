@@ -30,10 +30,10 @@ public class HanoiTower {
         move(n - 1, s1, s2, s3);
     }
 
-    public static void efficientMove(int n, Stack<Integer> s1, Stack<Integer> s2, Stack<Integer> s3) {
+    public static void efficientMove(int n, Stack<Integer> source, Stack<Integer> buffer, Stack<Integer> destination) {
         if (n <= 0) return;
-        efficientMove(n - 1, s1, s3, s2);
-        s3.push(s1.pop());
-        efficientMove(n - 1, s2, s1, s3);
+        efficientMove(n - 1, source, destination, buffer);
+        destination.push(source.pop());
+        efficientMove(n - 1, buffer, source, destination);
     }
 }
