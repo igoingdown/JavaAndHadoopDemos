@@ -1,6 +1,6 @@
-package interview.Hulu.Interview.Job.Online;
+package interview.Hulu.Job.Online;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Problem1 {
     public static void main(String[] args) {

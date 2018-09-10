@@ -1,4 +1,4 @@
-package interview.Hulu.Interview.Job.Online;
+package interview.Hulu.Job.Online;
 
 import java.util.*;
 
