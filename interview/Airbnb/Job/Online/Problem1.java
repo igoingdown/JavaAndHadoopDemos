@@ -58,6 +58,7 @@ public class Problem1 {
             for (String armyName : placeArmy.get(placeName)) {
                 if (supportedBy.containsKey(armyName) && supportedBy.get(armyName).size() > maxSupportNum) {
                     maxSupportedArmy = armyName;
+                    maxSupportNum = supportedBy.get(armyName).size();
                 } else if (supportedBy.containsKey(armyName) && supportedBy.get(armyName).size() == maxSupportNum) {
                     maxSupportedArmy = null;
                 }
