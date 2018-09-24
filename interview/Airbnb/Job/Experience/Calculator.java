@@ -1,17 +1,40 @@
 package interview.Airbnb.Job.Experience;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculator {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
-            System.out.println(solve(in.nextLine()));
+            System.out.println(calculate(in.nextLine()));
         }
     }
 
+    private static int calculate(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != ')') stack.push(str.charAt(i));
+            else {
+                StringBuilder builder = new StringBuilder();
+                while (!stack.isEmpty() && stack.peek() != '(') {
+                    builder.append(stack.peek());
+                    stack.pop();
+                }
+                if (!stack.isEmpty() && stack.peek() == '(') stack.pop();
+                Integer ans = solve(builder.reverse().toString());
+                for (char c : ans.toString().toCharArray()) stack.push(c);
+            }
+        }
+        StringBuilder builder = new StringBuilder();
+        while (!stack.isEmpty()) {
+            builder.append(stack.peek());
+            stack.pop();
+        }
+        return solve(builder.reverse().toString());
+    }
+
     private static int solve(String expr) {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < expr.length(); i++) {
             if (expr.charAt(i) != ' ') buffer.append(expr.charAt(i));
         }
@@ -45,5 +68,4 @@ public class Calculator {
         }
         return ans;
     }
-
 }

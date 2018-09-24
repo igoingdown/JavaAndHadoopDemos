@@ -24,9 +24,7 @@ public class Problem3 {
                 groups.get(key).toArray(group);
                 for (int m = 0; m < group.length; m++) {
                     for (int j = m + 1; j < group.length; j++) {
-                        StringBuffer buffer = new StringBuffer(group[m]);
-                        buffer.append(group[m]);
-                        String forward = buffer.toString();
+                        String forward = group[m];
                         for (int start = 0; start < key.length(); start++) {
                             if (forward.substring(start, start + key.length()).equals(group[j])) {
                                 caseRes = true;
@@ -34,7 +32,7 @@ public class Problem3 {
                             }
                         }
                         if (caseRes) break;
-                        StringBuffer buffer1 = new StringBuffer(group[m]);
+                        StringBuilder buffer1 = new StringBuilder(group[m]);
                         buffer1.reverse();
                         String reversedStr = buffer1.toString();
                         buffer1.append(reversedStr);
